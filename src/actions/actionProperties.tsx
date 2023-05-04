@@ -70,6 +70,7 @@ import {
   TextAlign,
   VerticalAlign,
 } from "../element/types";
+import { appendFontFamilyOptions } from "../fork_by_coyote/add-font-family";
 import { getLanguage, t } from "../i18n";
 import { KEYS } from "../keys";
 import { randomInteger } from "../random";
@@ -684,7 +685,7 @@ export const actionChangeFontFamily = register({
         <legend>{t("labels.fontFamily")}</legend>
         <ButtonIconSelect<FontFamilyValues | false>
           group="font-family"
-          options={options}
+          options={appendFontFamilyOptions(options)}
           value={getFormValue(
             elements,
             appState,
